@@ -4,7 +4,7 @@ export const useLocalStorage = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
     const token = localStorage.getItem(key);
 
-    return token.replace(/^"(.*)"$/, '$1');
+    return token ? token.replace(/^"(.*)"$/, '$1') : initialValue;
   });
 
   const setValue = (value) => {
