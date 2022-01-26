@@ -28,7 +28,6 @@ if (process.env.NODE_ENV === 'production') {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  // require db
   require('./db');
 
   if ('development' === process.env.NODE_ENV) {
