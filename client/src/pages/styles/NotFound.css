@@ -1,0 +1,10 @@
+.page_not_found {
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  justify-content: center;
+}
+
+.page_not_found img {
+  max-width: 400px;
+}

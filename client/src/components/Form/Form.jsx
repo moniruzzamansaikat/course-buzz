@@ -1,0 +1,68 @@
+import React, { useState } from 'react';
+import Input from './Input';
+import './Form.css';
+import Select from './Select';
+
+function Form({ handler, inputs }) {
+  const [errors, setErrors] = useState([]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {};
+    const newErrors = [];
+    for (let i = 0; i < inputs.length; i++) {
+      const input = inputs[i];
+      const value = e.target[input.name].value;
+
+      // validate input
+      if (value.toString().trim() === '') {
+        newErrors.push({
+          name: input.name,
+          message: `${input.label} is required`,
+        });
+      } else {
+        data[input.name] = value;
+      }
+    }
+
+    // if there are errors, update the state
+    if (newErrors.length > 0) {
+      setErrors(newErrors);
+      return;
+    } else {
+      setErrors([]);
+      e.target.reset();
+      handler(data);
+    }
+  };
+
+  return (
+    <form className="form" onSubmit={handleSubmit}>
+      {inputs.map((input) =>
+        input.type === 'select' ? (
+          <Select
+            label={input.label}
+            name={input.name}
+            options={input.options}
+            key={input.name}
+          />
+        ) : (
+          <Input
+            key={input.name}
+            name={input.name}
+            type={input.type}
+            label={input.label}
+            error={errors.find((error) => error.name === input.name)?.message}
+          />
+        )
+      )}
+
+      <button className="btn btn-primary" type="submit">
+        Submit
+      </button>
+    </form>
+  );
+}
+
+export default Form;

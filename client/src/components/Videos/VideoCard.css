@@ -1,0 +1,56 @@
+.video-card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+}
+
+.video-card .course-img {
+  position: relative;
+  display: block;
+}
+
+.video-card .course-img::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.397);
+}
+
+.video-card .content {
+  padding: 1rem;
+  display: flex;
+}
+
+.video-card a {
+  color: var(--primary-color);
+}
+
+.video-card a:hover {
+  text-decoration: underline;
+}
+
+.video-card .play-btn {
+  width: 20px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.video-card .play-btn:hover {
+  transform: scale(1.2);
+}
+
+.video-card img.remove {
+  width: 1.4rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+}
+
+.video-card img.remove:hover {
+  transform: scale(1.2);
+}

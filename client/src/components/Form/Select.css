@@ -1,0 +1,29 @@
+.select label {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.select select {
+  display: inline-block;
+  margin-bottom: 1rem;
+  outline: 0;
+  position: relative;
+  padding: 8px 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select select option {
+  text-transform: capitalize;
+}

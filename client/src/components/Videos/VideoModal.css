@@ -1,0 +1,11 @@
+.video-modal .cross-button img {
+  width: 20px;
+}
+
+.video-modal .ReactModal__Content {
+  display: none;
+}
+
+.ytp-title {
+  display: none !important;
+}

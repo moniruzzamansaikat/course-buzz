@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* variables */
+:root {
+  --primary-color: #523a34;
+  --dark-color: #b87d4b;
+  --light-color: #e5b25d;
+  --secondary-color: #cff27e;
+  --white-color: #fff;
+}
+
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+::selection {
+  color: var(--primary-color) !important;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  color: #523a34;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+/* custom classes */
+.container {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.page {
+  padding: 2rem 0;
+}
+
+.page p.help-text {
+  margin: 1rem 0;
+}
+
+.page p.help-text a {
+  color: var(--primary-color);
+}
+
+.page p.help-text a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 10px 1rem;
+  color: var(--primary-color);
+  display: inline-block;
+  cursor: pointer;
+  background: var(--white-color);
+  transition: 0.2s ease-in;
+  outline: 0;
+  border: 0;
+}
+
+.btn-primary {
+  padding: 10px 1rem;
+  background: var(--primary-color);
+  display: inline-block;
+  cursor: pointer;
+  color: var(--white-color) !important;
+  transition: 0.2s ease-in;
+  outline: 0;
+  border: 0;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* react modal */
+.ReactModal {
+  display: none;
+}
+
+.ReactModal__Content {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  height: auto !important;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  bottom: auto;
+  margin-right: -50%;
+}
+
+.ReactModal__Content--after-open {
+  inset: 40px;
+  border: 0 !important;
+  min-height: 300px;
+  background: #fff;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.ReactModal__Content button {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.ReactModal__Content button:hover {
+  opacity: 0.5;
+}
+
+.ReactModal__Content button img {
+  width: 20px;
+}
+
+.ReactModal__Content .ytp-title-text {
+  display: none !important;
+}

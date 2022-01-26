@@ -1,0 +1,25 @@
+.course_card {
+  margin: 1rem 0;
+  padding: 3rem 1.2rem;
+  background-color: var(--white-color);
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.course_card h2 {
+  margin: 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.course_card img {
+  width: 5rem;
+}
+
+.course_card a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.course_card a:hover {
+  text-decoration: underline;
+}
