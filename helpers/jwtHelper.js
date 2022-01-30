@@ -7,13 +7,18 @@ exports.signToken = (object) => {
     });
     return token;
   } catch (error) {
-    throw new Error(error.messa);
+    throw new Error(error.message);
   }
 };
 
 // check auth
 exports.checkAuth = (req, res, next) => {
   try {
+    // if not token in header
+    if (!req.headers.authorization) {
+      throw new Error('No token in header');
+    }
+
     const token = req.headers.authorization.split(' ')[1];
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;

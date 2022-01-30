@@ -54,7 +54,11 @@ function Navbar() {
             </li>
             <li>
               <Link
-                className="btn btn-primary"
+                className={`${
+                  navRef.current?.classList?.has('mobile')
+                    ? 'btn btn-primary'
+                    : ''
+                }`}
                 to={user ? '/profile' : '/sign-in'}
               >
                 {user ? 'Profile' : 'Sign In'}
