@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { checkAuth } = require('./helpers/jwtHelper');
-const logger = require('morgan');
 const path = require('path');
 
 const app = express();
@@ -11,7 +10,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(logger('dev'));
+
+// dev dependencies 
+if (process.env.NODE_ENV === '') {
+  app.use(require('morgan')('dev'));
+}
 
 // routes
 const authRoutes = require('./routes/auth');
