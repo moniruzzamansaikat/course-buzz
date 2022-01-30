@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const env = 'development';
+const env = 'production';
 
 export const api = Axios.create({
   baseURL: env === 'development' ? 'http://localhost:5000/api' : '/api',
