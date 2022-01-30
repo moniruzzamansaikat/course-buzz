@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfileCard from '../components/Profile/ProfileCard';
 import VideoLlist from '../components/Videos/VideoLlist';
 import { useAuth } from '../hooks/auth/useAuth';
 
@@ -7,8 +8,9 @@ function Profile() {
 
   return (
     <div className="page">
+      <ProfileCard />
       <div className="container">
-        <h2>Hi {user?.name?.split(' ')[0]}, vidoes added by you 👇🏼</h2>
+        <h2>Videos added by {user?.name}</h2>
         <VideoLlist videos={myVideos} />
       </div>
     </div>

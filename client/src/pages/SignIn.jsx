@@ -5,20 +5,25 @@ import Form from '../components/Form/Form';
 import { useAuth } from '../hooks/auth/useAuth';
 import { useLocalStorage } from '../hooks/useLocalstorage';
 
-function SignIn() {
-  const { user, setUser } = useAuth();
+function SignIn(props) {
+  const { user, setUser, setFormSubmitting } = useAuth();
   const [token, setToken] = useLocalStorage('token', '');
   const location = useLocation();
   const { from } = location.state || { from: { pathname: '/' } };
 
   const handleSubmit = (data) => {
-    loginUser(data).then((data) => {
-      if (data) {
-        const { user, token } = data;
-        setUser(user);
-        setToken(token);
-      }
-    });
+    loginUser(data)
+      .then((data) => {
+        if (data) {
+          const { user, token } = data;
+          setUser(user);
+          setToken(token);
+          setFormSubmitting(false);
+        }
+      })
+      .catch(() => {
+        setFormSubmitting(false);
+      });
   };
 
   // if user is logged in, redirect to home page

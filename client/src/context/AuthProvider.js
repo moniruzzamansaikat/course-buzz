@@ -9,6 +9,7 @@ function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [myVideos, setMyVideos] = useState([]);
   const [token] = useLocalStorage('token', '');
+  const [formSubmitting, setFormSubmitting] = useState(false);
 
   useEffect(() => {
     if (token) {
@@ -43,6 +44,8 @@ function AuthProvider({ children }) {
       value={{
         user,
         setUser,
+        formSubmitting,
+        setFormSubmitting,
         myVideos,
         addMyVideo,
         removeMyVideo,

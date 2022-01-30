@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useVideo } from '../hooks/videos/useVideo';
 import { get_youtube_thumbnail } from '../utils/utils.js';
 import { useAuth } from '../hooks/auth/useAuth';
@@ -28,10 +28,12 @@ function VideoDetails() {
           <div>
             <h1>Learn HTML in 2 hours</h1>
             <p>
-              Added by <strong>{user?.name} </strong>
+              Added by <strong>{video?.user?.name} </strong>
               in{' '}
               <strong>
-                <u>{video.category}</u>
+                <Link to={`/courses/learn-${video?.category}`}>
+                  {video.category}
+                </Link>
               </strong>{' '}
               category
             </p>

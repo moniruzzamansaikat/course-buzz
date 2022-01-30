@@ -5,7 +5,9 @@ import './CourseCard.css';
 function CourseCard({ course }) {
   return (
     <div className="course_card" data-aos="fade-up">
-      <img src={course.icon} alt="" />
+      <div className="card-img">
+        <img src={course.icon} alt="" />
+      </div>
       <h2>{course.title}</h2>
       <Link to={`/courses/${course.slug}`}>watch videos</Link>
     </div>

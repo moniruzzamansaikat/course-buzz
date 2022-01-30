@@ -4,11 +4,17 @@
   padding: 0;
 }
 
+/* fonts */
+@font-face {
+  font-family: 'Custom';
+  src: url('./fonts/font-one.woff');
+}
+
 /* variables */
 :root {
-  --primary-color: #523a34;
+  --primary-color: rgb(243, 181, 66);
   --dark-color: #b87d4b;
-  --light-color: #e5b25d;
+  --light-color: rgb(255, 200, 98);
   --secondary-color: #cff27e;
   --white-color: #fff;
 }
@@ -72,7 +78,7 @@ section {
 
 .btn {
   padding: 10px 1rem;
-  color: var(--primary-color);
+  color: #000;
   display: inline-block;
   cursor: pointer;
   background: var(--white-color);
@@ -83,10 +89,10 @@ section {
 
 .btn-primary {
   padding: 10px 1rem;
-  background: var(--primary-color);
+  background: var(--primary-color) !important;
   display: inline-block;
   cursor: pointer;
-  color: var(--white-color) !important;
+  color: #0f0f0f !important;
   transition: 0.2s ease-in;
   outline: 0;
   border: 0;
@@ -143,4 +149,8 @@ section {
 
 .ReactModal__Content .ytp-title-text {
   display: none !important;
+}
+
+.section-title {
+  font-family: 'Custom';
 }

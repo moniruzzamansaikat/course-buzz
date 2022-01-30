@@ -1,0 +1,14 @@
+.replies-card {
+  margin: 1rem 0;
+  padding-left: 12px;
+  border-left: 3px solid var(--primary-color);
+}
+
+.replies-card p {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.replies-card p.user-name {
+  font-size: 12px;
+}

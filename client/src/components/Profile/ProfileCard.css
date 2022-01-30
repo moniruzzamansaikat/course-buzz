@@ -1,0 +1,14 @@
+.profile-card {
+  padding: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 2rem;
+}
+
+.profile-card h3 {
+  margin: 1rem 0;
+}
+
+.profile-card .btn {
+  background-color: rgba(114, 16, 16, 0.877);
+  color: white;
+}

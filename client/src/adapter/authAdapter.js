@@ -18,6 +18,7 @@ export const loginUser = ({ email, password }) => {
       if (error.response) {
         swal('Error', error.response.data, 'error');
       }
+      throw error;
     });
 };
 
@@ -36,6 +37,7 @@ export const registerUser = ({ name, email, password }) => {
       if (error.response) {
         swal('Error', error.response.data, 'error');
       }
+      throw error;
     });
 };
 

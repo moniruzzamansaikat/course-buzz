@@ -7,9 +7,9 @@ function Courses({ limit }) {
   const { categories } = useCourse();
 
   return (
-    <section className="courses">
+    <section className="courses" style={{backgroundImage: `url(/img/bg-pattern.jpg)`}}>
       <div className="container">
-        <h2>Courses</h2>
+        <h1 className='section-title'>Courses</h1>
         <div className="course_items">
           {categories
             .slice(0, limit ? limit + 1 : categories.length + 1)

@@ -1,5 +1,5 @@
 .why-us {
-  background-color: var(--light-color);
+  background-color: var(--primary-color);
   padding: 2rem 0;
 }
 
@@ -9,10 +9,12 @@
 
 .why-us h1 {
   font-size: 3rem;
+  color: white;
   margin-bottom: 1rem;
 }
 
 .why-us p {
+  color: white;
   margin-bottom: 1rem;
 }
 

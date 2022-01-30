@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import Input from './Input';
-import './Form.css';
 import Select from './Select';
+import { useAuth } from '../../hooks/auth/useAuth';
+import './Form.css';
 
 function Form({ handler, inputs }) {
   const [errors, setErrors] = useState([]);
+  const { formSubmitting: submitting, setFormSubmitting } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormSubmitting(true);
 
     const data = {};
     const newErrors = [];
@@ -29,6 +32,7 @@ function Form({ handler, inputs }) {
     // if there are errors, update the state
     if (newErrors.length > 0) {
       setErrors(newErrors);
+      setFormSubmitting(false);
       return;
     } else {
       setErrors([]);
@@ -53,12 +57,16 @@ function Form({ handler, inputs }) {
             name={input.name}
             type={input.type}
             label={input.label}
+            {...input}
             error={errors.find((error) => error.name === input.name)?.message}
           />
         )
       )}
 
-      <button className="btn btn-primary" type="submit">
+      <button
+        className={`btn btn-primary ${submitting ? 'submitting' : ''}`}
+        type="submit"
+      >
         Submit
       </button>
     </form>

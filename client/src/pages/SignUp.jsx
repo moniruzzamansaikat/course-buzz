@@ -7,15 +7,22 @@ import { useLocalStorage } from '../hooks/useLocalstorage';
 
 function SignUp() {
   const [token, setToken] = useLocalStorage('token', '');
-  const { user, setUser } = useAuth();
+  const { user, setUser, setFormSubmitting } = useAuth();
   const location = useLocation();
 
   const handleSubmit = (data) => {
-    registerUser(data).then((data) => {
-      const { user, token } = data;
-      setUser(user);
-      setToken(token);
-    });
+    registerUser(data)
+      .then((data) => {
+        if (data) {
+          const { user, token } = data;
+          setUser(user);
+          setToken(token);
+          setFormSubmitting(false);
+        }
+      })
+      .catch(() => {
+        setFormSubmitting(false);
+      });
   };
 
   // if user is logged in, redirect to home page

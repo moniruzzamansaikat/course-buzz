@@ -1,9 +1,11 @@
 .course_card {
-  margin: 1rem 0;
-  padding: 3rem 1.2rem;
+  margin: 3rem 0;
+  padding: 0 1.2rem;
+  padding-bottom: 2.3rem;
   background-color: var(--white-color);
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-left: 13px solid var(--light-color);
 }
 
 .course_card h2 {
@@ -11,8 +13,22 @@
   text-transform: uppercase;
 }
 
+.course_card .card-img {
+  width: 100px;
+  height: 100px;
+  background-color:var(--light-color);
+  margin-left: 50%;
+  margin-top: -50px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  padding: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .course_card img {
-  width: 5rem;
+  display: inline-block;
 }
 
 .course_card a {

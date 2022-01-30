@@ -1,0 +1,34 @@
+.community-page {
+  padding: 1rem 0;
+}
+
+.community-page h1 {
+  margin-bottom: 12px;
+}
+
+.community-page h1 ~ p {
+  margin-bottom: 2rem;
+}
+
+.community-page .filter {
+  margin: 1rem;
+  margin-left: 0;
+}
+
+.community-page .filter select {
+  padding: 4px 1rem;
+  outline: 0;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-weight: 700;
+  min-width: 3rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 3px;
+}
+
+.community-page .filter .btn {
+  padding: 6px 1rem;
+  display: inline-block;
+  margin-left: 12px;
+  border-radius: 3px;
+}

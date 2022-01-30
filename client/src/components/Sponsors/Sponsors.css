@@ -1,0 +1,22 @@
+.sponsors {
+  padding: 3rem 0;
+}
+
+.sponsors .images {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sponsors h2 {
+  color: var(--primary-color);
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.sponsors .images img {
+  max-width: 140px;
+  display: inline-block;
+  margin-right: 5rem;
+  margin-bottom: 3rem;
+}

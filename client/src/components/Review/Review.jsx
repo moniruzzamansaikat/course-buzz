@@ -15,11 +15,16 @@ function Review({ videoId }) {
     });
   }, []);
 
+  // add review to reviews
+  const addReview = (review) => {
+    setReviews([...reviews, review]);
+  };
+
   return (
     <div className="review">
       <div className="container">
         <ReviewList reviews={reviews} />
-        <AddReview videoId={videoId} />
+        <AddReview videoId={videoId} addReview={addReview} />
       </div>
     </div>
   );

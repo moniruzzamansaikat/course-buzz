@@ -1,3 +1,16 @@
+.courses {
+  background-size: cover;  
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.courses h1 {
+  font-size: 3rem;
+  color: white;
+  color: var(--light-color);
+  margin-bottom: 3.4rem;
+}
+
 .courses .course_items {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -7,7 +20,7 @@
 @media (max-width: 992px) {
   .courses .course_items {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
   }
 }
@@ -15,7 +28,16 @@
 @media (max-width: 768px) {
   .courses .course_items {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .courses .course_items {
+    display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2rem;
   }
 }
+  

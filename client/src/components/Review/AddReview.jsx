@@ -4,14 +4,22 @@ import { useLocalStorage } from '../../hooks/useLocalstorage';
 import './AddReview.css';
 import { addReviewById } from '../../adapter/videosAdapter';
 import swal from 'sweetalert';
+import { useAuth } from '../../hooks/auth/useAuth';
 
-function AddReview({ videoId }) {
+function AddReview({ videoId, addReview }) {
   const [token] = useLocalStorage('token');
+  const { setFormSubmitting } = useAuth();
 
   const handler = (data) => {
-    addReviewById(token, videoId, data.text).then((res) => {
-      swal('Success', 'Review added', 'success');
-    });
+    addReviewById(token, videoId, data.text)
+      .then((data) => {
+        addReview(data);
+        setFormSubmitting(false);
+        swal('Success', 'Review added', 'success');
+      })
+      .catch(() => {
+        setFormSubmitting(false);
+      });
   };
 
   const inputs = [

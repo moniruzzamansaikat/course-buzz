@@ -18,10 +18,16 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
 import { useEffect } from 'react';
+import Community from './pages/Community';
+import Main from './components/Community/Main';
+import Ask from './components/Community/Ask';
+import Replies from './pages/Replies';
 
 function App() {
   useEffect(() => {
-    AOS.init({});
+    AOS.init({
+      duration: '1000',
+    });
   }, []);
 
   return (
@@ -34,6 +40,15 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/courses" element={<CoursePage />} />
+
+              <Route path="/community" element={<Community />}>
+                <Route index element={<Main />} />
+                <Route element={<PrivatePage />}>
+                  <Route path="ask" element={<Ask />} />
+                  <Route path=":id" element={<Replies />} />
+                </Route>
+              </Route>
+
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/sign-in" element={<SignIn />} />
               <Route element={<PrivatePage />}>

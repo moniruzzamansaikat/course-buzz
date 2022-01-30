@@ -6,7 +6,10 @@ const Video = require('../model/Video');
 // todo: test
 exports.getAllVideos = async () => {
   try {
-    return await Video.find();
+    return await Video.find().populate({
+      path: 'user',
+      select: "name",
+    });
   } catch (error) {
     throw new Error(error.message);
   }
@@ -15,7 +18,7 @@ exports.getAllVideos = async () => {
 // todo: test
 exports.getVideosByUserId = async (userId) => {
   try {
-    const vidoes = await Video.find({ user: userId });
+    const vidoes = await Video.find({ user: new ObjectId(userId) });
     return vidoes;
   } catch (error) {
     throw new Error(error.message);

@@ -4,7 +4,10 @@ const VideoSchema = new Schema({
   name: String,
   url: String,
   category: String,
-  user: String,
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+  },
   reviews: [
     {
       text: String,

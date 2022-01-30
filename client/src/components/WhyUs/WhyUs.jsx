@@ -7,8 +7,8 @@ function WhyUs() {
     <div className="why-us">
       <div className="container">
         <div className="row">
-          <div className="col">
-            <h1>Why you start from here ?</h1>
+          <div className="col" data-aos="fade-right">
+            <h1 className='section-title'>Why you start from here ?</h1>
             <p>
               This is open sorce and free forever. You can contribute by adding
               best courses you have finded.{' '}
@@ -17,7 +17,7 @@ function WhyUs() {
               Community
             </Link>
           </div>
-          <div className="col">
+          <div className="col" data-aos="fade-left">
             <img src="/img/features.svg" alt="" />
           </div>
         </div>

@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { checkAuth } = require('./helpers/jwtHelper');
+const logger = require('morgan');
 const path = require('path');
 
 const app = express();
@@ -10,12 +11,20 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(logger('dev'));
 
 // routes
 const authRoutes = require('./routes/auth');
 const coursesRoutes = require('./routes/videos');
+const discussionRoutes = require('./routes/discussion');
+const { db } = require('./model/User');
+const User = require('./model/User');
+const Discussion = require('./model/Discussion');
+const Video = require('./model/Video');
+
 app.use('/api/auth', authRoutes);
 app.use('/api/videos', checkAuth, coursesRoutes);
+app.use('/api/discuss', checkAuth, discussionRoutes);
 
 // server frontend
 if (process.env.NODE_ENV === 'production') {

@@ -51,6 +51,7 @@ export const createNewVideo = (token, { name, url, category }) => {
       if (error.response) {
         swal('Error', error.response.data, 'error');
       }
+      throw error;
     });
 };
 
@@ -86,6 +87,8 @@ export const addReviewById = (token, videoId, text) => {
       if (error?.response) {
         swal('Error', error.response.data, 'error');
       }
+
+      throw error;
     });
 };
 

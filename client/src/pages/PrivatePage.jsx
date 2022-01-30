@@ -1,15 +1,16 @@
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import swal from 'sweetalert';
 import { useAuth } from '../hooks/auth/useAuth';
 
 function PrivatePage() {
   const { user } = useAuth();
   const location = useLocation();
 
-  return user ? (
-    <Outlet />
-  ) : (
-    <Navigate to={'/sign-in'} state={{ from: location }} />
-  );
+  if (!user) {
+    return <Navigate to="/sign-in" state={{ from: location }} />;
+  }
+
+  return <Outlet />;
 }
 
 export default PrivatePage;

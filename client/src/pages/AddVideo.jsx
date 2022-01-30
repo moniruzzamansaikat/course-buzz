@@ -5,18 +5,25 @@ import { useLocalStorage } from '../hooks/useLocalstorage';
 import { useAuth } from '../hooks/auth/useAuth';
 import { useVideo } from '../hooks/videos/useVideo';
 import { createNewVideo } from '../adapter/videosAdapter';
+import swal from 'sweetalert';
 
 function AddCourse() {
   const [token] = useLocalStorage('token');
   const { categories } = useCourse();
-  const { addMyVideo } = useAuth();
+  const { addMyVideo, setFormSubmitting } = useAuth();
   const { addVideo } = useVideo();
 
   const handler = (data) => {
-    createNewVideo(token, data).then((resData) => {
-      addVideo(resData);
-      addMyVideo(resData);
-    });
+    createNewVideo(token, data)
+      .then((resData) => {
+        addVideo(resData);
+        addMyVideo(resData);
+        setFormSubmitting(false);
+        swal('Success', 'Video added successfully', 'success');
+      })
+      .catch(() => {
+        setFormSubmitting(false);
+      });
   };
 
   const inputs = [
