@@ -14,7 +14,7 @@ exports.loginUser = async ({ email, password }) => {
 
     return user;
   } catch (error) {
-    throw new Error(error);
+    throw error;
   }
 };
 
@@ -32,7 +32,7 @@ exports.createUser = async ({ name, email, password }) => {
       await user.save();
       return user;
     } catch (error) {
-      throw new Error(error);
+      throw error;
     }
   }
 };
