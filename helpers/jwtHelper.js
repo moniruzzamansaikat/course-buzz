@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 
 exports.signToken = (object) => {
   try {
-    const token = jwt.sign(object, process.env.JWT_SECRET, {
+    const token = jwt.sign(object, process.env.JWT_SECRET || 'laskdfjalskjfdlaskdjf', {
       expiresIn: process.env.JWT_EXPIRE,
     });
     return token;
