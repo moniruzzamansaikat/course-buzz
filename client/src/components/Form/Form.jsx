@@ -32,7 +32,6 @@ function Form({ handler, inputs }) {
     // if there are errors, update the state
     if (newErrors.length > 0) {
       setErrors(newErrors);
-      setFormSubmitting(false);
       return;
     } else {
       setErrors([]);
