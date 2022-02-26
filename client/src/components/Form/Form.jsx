@@ -31,6 +31,7 @@ function Form({ handler, inputs }) {
 
     // if there are errors, update the state
     if (newErrors.length > 0) {
+      setFormSubmitting(false);
       setErrors(newErrors);
       return;
     } else {
@@ -62,11 +63,8 @@ function Form({ handler, inputs }) {
         )
       )}
 
-      <button
-        className={`btn btn-primary ${submitting ? 'submitting' : ''}`}
-        type="submit"
-      >
-        Submit
+      <button className="btn btn-primary" type="submit">
+        {submitting ? <i class="fa fa-spinner"></i> : 'Submit'}
       </button>
     </form>
   );
