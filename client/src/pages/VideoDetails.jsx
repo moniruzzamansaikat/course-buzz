@@ -26,10 +26,10 @@ function VideoDetails() {
             <img src={image} alt="" />
           </div>
           <div>
-            <h1>Learn HTML in 2 hours</h1>
+            <h1>{video?.name}</h1>
             <p>
               Added by <strong>{video?.user?.name} </strong>
-              in{' '}
+              in
               <strong>
                 <Link to={`/courses/learn-${video?.category}`}>
                   {video.category}
@@ -37,6 +37,7 @@ function VideoDetails() {
               </strong>{' '}
               category
             </p>
+
             <p>
               <a href="#reviews"> {video?.reviews?.length || 0} Reviews</a>
             </p>
