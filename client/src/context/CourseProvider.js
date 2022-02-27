@@ -45,6 +45,12 @@ function CourseProvider({ children }) {
       icon: '/img/courses/react.png',
     },
     {
+      title: 'Learn React Native',
+      tag: 'react-native',
+      slug: 'learn-react-native',
+      icon: '/img/courses/react.png',
+    },
+    {
       title: 'Learn Vue.js',
       tag: 'vue',
       slug: 'learn-vue',
