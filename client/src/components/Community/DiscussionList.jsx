@@ -10,31 +10,38 @@ function DiscussionList() {
   const [discussions, setDiscussions] = useState([]);
   const searchingFor = searchParam.get('key');
   const [token] = useLocalStorage('token');
+  const [fetching, setFetching] = useState(true);
 
   useEffect(() => {
     fetchQuestionsByCategory(token, searchingFor)
       .then((data) => {
-        console.log(data);
         setDiscussions(data);
+        setFetching(false);
       })
       .catch((error) => {
-        console.log(error.message);
+        setFetching(false);
+        console.log(error.message || '');
       });
   }, [searchingFor, token, searchParam]);
 
   return (
     <div className="discussion-list">
-      {!discussions.length > 0 && (
-        <div className="not-found">
-          <h2>
-            No discussion found {searchingFor && 'for'} {searchingFor}
-          </h2>
-        </div>
-      )}
+      <div className="not-found">
+        <h2>
+          {fetching ? (
+            'Loading...'
+          ) : discussions.length === 0 ? (
+            <p>
+              No discussion found {searchingFor && 'for'} {searchingFor}
+            </p>
+          ) : null}
+        </h2>
+      </div>
 
-      {discussions.map((discussion) => (
-        <DiscussionCard key={discussion._id} discussion={discussion} />
-      ))}
+      {!fetching &&
+        discussions.map((discussion) => (
+          <DiscussionCard key={discussion._id} discussion={discussion} />
+        ))}
     </div>
   );
 }

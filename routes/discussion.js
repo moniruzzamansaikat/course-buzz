@@ -12,6 +12,7 @@ const router = require('express').Router();
 
 // get all discussions
 router.get('/', async (req, res) => {
+  console.log('get all discussions');
   try {
     const { category } = req.query;
     let discussions = [];
