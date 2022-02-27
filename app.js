@@ -25,7 +25,7 @@ const discussionRoutes = require('./routes/discussion');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/videos', checkAuth, coursesRoutes);
-app.use('/api/discuss', checkAuth, discussionRoutes);
+app.use('/api/discuss', discussionRoutes);
 
 // server frontend
 if (process.env.NODE_ENV === 'production') {
