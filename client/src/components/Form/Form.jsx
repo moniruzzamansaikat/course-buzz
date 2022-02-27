@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Input from './Input';
 import Select from './Select';
 import { useAuth } from '../../hooks/auth/useAuth';
+import Loading from '../Loading/Loading';
 import './Form.css';
 
 function Form({ handler, inputs }) {
@@ -64,7 +65,7 @@ function Form({ handler, inputs }) {
       )}
 
       <button className="btn btn-primary" type="submit">
-        {submitting ? <i class="fa fa-spinner"></i> : 'Submit'}
+        {submitting ? <Loading /> : 'Submit'}
       </button>
     </form>
   );
