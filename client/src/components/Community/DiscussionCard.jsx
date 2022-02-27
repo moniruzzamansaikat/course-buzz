@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 import './DiscussionCard.css';
 
 function DiscussionCard({ discussion }) {
-  const { _id, category, text, replies } = discussion;
+  const { _id, category, text, replies, createdAt } = discussion;
 
   return (
     <div className="discussion-card">
@@ -12,7 +13,7 @@ function DiscussionCard({ discussion }) {
       </p>
       <div className="content">
         <p>{text}</p>
-        <p className="time">12h ago</p>
+        <p className="time">{moment(createdAt).fromNow()}</p>
         <div className="action">
           <Link to={`/community/${_id}`}>{replies.length} replies..</Link>
           <Link to={`/community/${_id}`}>Reply</Link>
