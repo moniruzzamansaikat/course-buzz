@@ -16,7 +16,7 @@
 .course_card .card-img {
   width: 100px;
   height: 100px;
-  background-color:var(--light-color);
+  background-color: var(--light-color);
   margin-left: 50%;
   margin-top: -50px;
   transform: translateX(-50%);
@@ -32,7 +32,13 @@
 }
 
 .course_card a {
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  padding: 5px 10px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 4px;
+  text-transform: capitalize;
   text-decoration: none;
 }
 
