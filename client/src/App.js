@@ -43,9 +43,9 @@ function App() {
 
               <Route path="/community" element={<Community />}>
                 <Route index element={<Main />} />
+                <Route path=":id" element={<Replies />} />
                 <Route element={<PrivatePage />}>
                   <Route path="ask" element={<Ask />} />
-                  <Route path=":id" element={<Replies />} />
                 </Route>
               </Route>
 

@@ -20,18 +20,16 @@ exports.checkAuth = (req, res, next) => {
     }
 
     const token = req.headers.authorization.split(' ')[1];
+    if (!token) throw new Error('No token in header');
+
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     return next();
   } catch (error) {
     let { message } = error;
 
-    if (error.name === 'TokenExpiredError') {
-      message = 'Your login session has expired. Please login again.';
-    }
-
-    res.status(401).json({
-      user: null,
+    message = 'Your login session has expired. Please login again.';
+    res.status(401).send({
       message,
     });
   }

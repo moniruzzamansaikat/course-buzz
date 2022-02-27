@@ -52,7 +52,7 @@ export const isLoggedIn = (token) => {
     .then((res) => res.data)
     .catch((error) => {
       if (error.response) {
-        swal('Error', error.response.data, 'error');
+        swal('Error', error.response.data.message, 'error');
       }
     });
 };

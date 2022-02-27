@@ -80,7 +80,7 @@ export const addReply = (token, { text, discussionId }) => {
     })
     .catch((error) => {
       if (error.response) {
-        swal('Error', error.response.data, 'error');
+        swal('Error', error.response.data.message, 'error');
       }
 
       throw error;
