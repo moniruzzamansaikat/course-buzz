@@ -35,7 +35,11 @@ function AddReply({ discussionId, setQuestion }) {
   return (
     <div className="add-reply">
       <h3>Add a reply</h3>
-      <Form inputs={inputs} handler={handler} />
+      <Form
+        inputs={inputs}
+        handler={handler}
+        disabledButton={user ? false : true}
+      />
     </div>
   );
 }

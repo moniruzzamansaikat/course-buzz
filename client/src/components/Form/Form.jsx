@@ -5,7 +5,7 @@ import { useAuth } from '../../hooks/auth/useAuth';
 import Loading from '../Loading/Loading';
 import './Form.css';
 
-function Form({ handler, inputs }) {
+function Form({ handler, inputs, disabledButton }) {
   const [errors, setErrors] = useState([]);
   const { formSubmitting: submitting, setFormSubmitting } = useAuth();
 
@@ -64,7 +64,11 @@ function Form({ handler, inputs }) {
         )
       )}
 
-      <button className="btn btn-primary" type="submit" disabled="true">
+      <button
+        className="btn btn-primary"
+        type="submit"
+        disabled={disabledButton}
+      >
         {submitting ? <Loading /> : 'Submit'}
       </button>
     </form>
