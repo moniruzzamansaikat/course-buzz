@@ -14,14 +14,14 @@ header.header {
 }
 
 header.header h1 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: 'Custom';
-  letter-spacing: 3p  x;
+  letter-spacing: 3p x;
   color: var(--light-color);
 }
 
 header.header h1 span {
-  position: relative;  
+  position: relative;
 }
 
 header.header h1 span::before {
@@ -36,12 +36,12 @@ header.header h1 span::before {
 }
 
 header.header h3 {
- font-size: 2rem; 
+  font-size: 2rem;
 }
 
 header.header .btn {
   margin-top: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
