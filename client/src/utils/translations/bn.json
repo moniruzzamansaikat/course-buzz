@@ -8,5 +8,22 @@
     "community": "কমিউনিটি",
     "signup": "সাইন আপ",
     "signin": "সাইন ইন"
+  },
+  "coursesText": "কোর্সসমূহ",
+  "watchVideosText": "ভিডিও দেখুন",
+  "courses": {
+    "Learn html": "এইচটিএমএল শিখুন",
+    "Learn css": "সিএসএস শিখুন",
+    "Learn JavaScript": "জাভাস্ক্রিপ্ট শিখুন",
+    "Learn TypeScript": "টাইপস্ক্রিপ্ট শিখুন",
+    "Learn React js": "রিয়েক্ট জেএস শিখুন",
+    "Learn React Native": "রিয়েক্ট ন্যাটিভ শিখুন",
+    "Learn Vue js": "ভিউ জেএস শিখুন",
+    "Learn Node js": "নোড জেএস শিখুন",
+    "Learn Angular": "অ্যাঙ্গুলার জেএস শিখুন",
+    "Learn Python": "পাইথন শিখুন",
+    "Learn Laravel": "লারাভেল শিখুন ",
+    "Learn Codeigniter": "কোডইগনিটার শিখুন",
+    "Learn Git": "গিট শিখুন"
   }
 }

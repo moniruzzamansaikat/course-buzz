@@ -39,7 +39,7 @@ function CourseProvider({ children }) {
       icon: '/img/courses/css.png',
     },
     {
-      title: 'Learn React.js',
+      title: 'Learn React js',
       tag: 'react',
       slug: 'learn-react',
       icon: '/img/courses/react.png',
@@ -51,13 +51,13 @@ function CourseProvider({ children }) {
       icon: '/img/courses/react-native.png',
     },
     {
-      title: 'Learn Vue.js',
+      title: 'Learn Vue js',
       tag: 'vue',
       slug: 'learn-vue',
       icon: '/img/courses/vue.png',
     },
     {
-      title: 'Learn Node.js',
+      title: 'Learn Node js',
       tag: 'node',
       slug: 'learn-node',
       icon: '/img/courses/node.png',

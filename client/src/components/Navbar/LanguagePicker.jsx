@@ -4,7 +4,7 @@ import Select from 'react-select';
 import './LanguagePicker.css';
 
 function LanguagePicker() {
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState('bn');
   const { i18n } = useTranslation();
   const options = [
     {

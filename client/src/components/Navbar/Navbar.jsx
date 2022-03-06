@@ -67,7 +67,7 @@ function Navbar() {
                 {user ? 'Profile' : t('navlinks.signin')}
               </Link>
             </li>
-            <li>
+            <li className="picker">
               <LanguagePicker />
             </li>
           </ul>

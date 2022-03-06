@@ -8,5 +8,22 @@
     "community": "Community",
     "signup": "Sign Up",
     "signin": "Sign In"
+  },
+  "coursesText": "Courses",
+  "watchVideosText": "Watch Videos",
+  "courses": {
+    "Learn html": "Learn html",
+    "Learn css": "Learn css",
+    "Learn JavaScript": "Learn JavaScript",
+    "Learn TypeScript": "Learn TypeScript",
+    "Learn React js": "Learn React",
+    "Learn React Native": "Learn React Native",
+    "Learn Vue js": "Learn Vue",
+    "Learn Node js": "Learn Node",
+    "Learn Angular": "Learn Angular",
+    "Learn Python": "Learn Python",
+    "Learn Laravel": "Learn Laravel",
+    "Learn Codeigniter": "Learn Codeigniter",
+    "Learn Git": "Learn Git"
   }
 }
