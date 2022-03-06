@@ -6,7 +6,7 @@ import Form from '../Form/Form';
 import './AddReply.css';
 
 function AddReply({ discussionId, setQuestion }) {
-  const { setFormSubmitting } = useAuth();
+  const { setFormSubmitting, user } = useAuth();
   const [token] = useLocalStorage('token');
 
   const handler = (data) => {
@@ -28,6 +28,7 @@ function AddReply({ discussionId, setQuestion }) {
       name: 'text',
       type: 'text',
       label: 'Reply',
+      disabled: user ? false : true,
     },
   ];
 
