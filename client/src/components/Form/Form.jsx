@@ -64,7 +64,7 @@ function Form({ handler, inputs }) {
         )
       )}
 
-      <button className="btn btn-primary" type="submit">
+      <button className="btn btn-primary" type="submit" disabled="true">
         {submitting ? <Loading /> : 'Submit'}
       </button>
     </form>

@@ -1,1 +1,10 @@
 /* css for form */
+.form button:disabled {
+  cursor: not-allowed;
+  background-color: #b1b1b1 !important;
+  color: #fff !important;
+}
+
+.form button:disabled:hover {
+  opacity: 1 !important;
+}
