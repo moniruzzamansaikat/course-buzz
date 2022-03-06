@@ -23,6 +23,8 @@ import Main from './components/Community/Main';
 import Ask from './components/Community/Ask';
 import Replies from './pages/Replies';
 
+import './utils/translations';
+
 function App() {
   useEffect(() => {
     AOS.init({

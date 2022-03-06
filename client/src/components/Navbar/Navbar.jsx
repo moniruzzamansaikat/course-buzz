@@ -1,4 +1,5 @@
 import React, { createRef, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth/useAuth';
 import LanguagePicker from './LanguagePicker';
@@ -7,6 +8,7 @@ import './Navbar.css';
 function Navbar() {
   const { user } = useAuth();
   const navRef = createRef();
+  const { t } = useTranslation();
 
   const toggleMenu = useCallback(() => {
     navRef.current.classList.toggle('mobile');
@@ -40,17 +42,17 @@ function Navbar() {
         <div className="pc-menu" ref={navRef}>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">{t('navlinks.home')}</Link>
             </li>
             <li>
-              <Link to="/courses">Courses</Link>
+              <Link to="/courses">{t('navlinks.courses')}</Link>
             </li>
             <li>
-              <Link to="/community?key=all">Community</Link>
+              <Link to="/community?key=all">{t('navlinks.community')}</Link>
             </li>
             <li>
               <Link to={user ? '/add-video' : '/sign-up'}>
-                {user ? 'Add Video' : 'Sign Up'}
+                {user ? 'Add Video' : t('navlinks.signup')}
               </Link>
             </li>
             <li>
@@ -62,7 +64,7 @@ function Navbar() {
                 }`}
                 to={user ? '/profile' : '/sign-in'}
               >
-                {user ? 'Profile' : 'Sign In'}
+                {user ? 'Profile' : t('navlinks.signin')}
               </Link>
             </li>
             <li>
