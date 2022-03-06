@@ -24,7 +24,8 @@
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
-    "mongoose": "^6.1.8"
+    "mongoose": "^6.1.8",
+    "react-select": "^5.2.2"
   },
   "devDependencies": {
     "morgan": "^1.10.0"

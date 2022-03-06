@@ -1,6 +1,7 @@
 import React, { createRef, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth/useAuth';
+import LanguagePicker from './LanguagePicker';
 import './Navbar.css';
 
 function Navbar() {
@@ -63,6 +64,9 @@ function Navbar() {
               >
                 {user ? 'Profile' : 'Sign In'}
               </Link>
+            </li>
+            <li>
+              <LanguagePicker />
             </li>
           </ul>
         </div>
