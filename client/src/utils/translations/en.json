@@ -7,7 +7,9 @@
     "courses": "Courses",
     "community": "Community",
     "signup": "Sign Up",
-    "signin": "Sign In"
+    "signin": "Sign In",
+    "addvideo": "Add Video",
+    "profile": "Profile"
   },
   "coursesText": "Courses",
   "watchVideosText": "Watch Videos",
@@ -25,5 +27,58 @@
     "Learn Laravel": "Learn Laravel",
     "Learn Codeigniter": "Learn Codeigniter",
     "Learn Git": "Learn Git"
+  },
+  "whyUs": {
+    "title": "Why you start from here ?",
+    "body": "This is open sorce and free forever. You can contribute by adding best courses you have finded.",
+    "buttonText": "Community"
+  },
+  "sponsors": {
+    "title": "Sponsors"
+  },
+  "signIn": {
+    "title": "Sign In",
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password"
+    }
+  },
+  "signUp": {
+    "title": "Sign Up",
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter your full name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email address"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter a new password"
+    }
+  },
+  "utils": {
+    "submitText": "Submit",
+    "dontHaveAC": "Dont't have an acount ?",
+    "alreadyHaveAC": "Already have an account ?"
+  },
+  "footer": {
+    "tagline": "Free learning platform",
+    "courses": "Courses",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "contribute": "Contribute",
+    "community": "Community",
+    "blog": "Blog",
+    "support": "Support",
+    "about": "About",
+    "privacy": "Privacy Policy",
+    "codeOfContact": "Code of Conduct",
+    "terms": "Terms of Service"
   }
 }

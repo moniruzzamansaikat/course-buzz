@@ -4,10 +4,12 @@ import Select from './Select';
 import { useAuth } from '../../hooks/auth/useAuth';
 import Loading from '../Loading/Loading';
 import './Form.css';
+import { useTranslation } from 'react-i18next';
 
 function Form({ handler, inputs, disabledButton }) {
   const [errors, setErrors] = useState([]);
   const { formSubmitting: submitting, setFormSubmitting } = useAuth();
+  const { t } = useTranslation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,7 +71,7 @@ function Form({ handler, inputs, disabledButton }) {
         type="submit"
         disabled={disabledButton}
       >
-        {submitting ? <Loading /> : 'Submit'}
+        {submitting ? <Loading /> : t('utils.submitText')}
       </button>
     </form>
   );

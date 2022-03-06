@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, Navigate, useLocation } from 'react-router-dom';
 import { registerUser } from '../adapter/authAdapter';
 import Form from '../components/Form/Form';
@@ -9,6 +10,7 @@ function SignUp() {
   const [token, setToken] = useLocalStorage('token', '');
   const { user, setUser, setFormSubmitting } = useAuth();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const handleSubmit = (data) => {
     registerUser(data)
@@ -33,29 +35,33 @@ function SignUp() {
 
   const inputs = [
     {
-      label: 'Name',
+      label: t('signUp.name.label'),
       type: 'text',
       name: 'name',
+      placeholder: t('signUp.name.placeholder'),
     },
     {
-      label: 'Email',
+      label: t('signUp.email.label'),
       type: 'email',
       name: 'email',
+      placeholder: t('signUp.email.placeholder'),
     },
     {
-      label: 'Password',
+      label: t('signUp.password.label'),
       name: 'password',
       type: 'password',
+      placeholder: t('signUp.password.placeholder'),
     },
   ];
 
   return (
     <div className="page">
       <div className="container">
-        <h1>Sign Up</h1>
+        <h1>{t('signUp.title')}</h1>
         <Form inputs={inputs} handler={handleSubmit} />
         <p className="help-text">
-          Dont's have an account ? <Link to="/sign-in">Sign In</Link>
+          {t('utils.alreadyHaveAC')}{' '}
+          <Link to="/sign-in">{t('signIn.title')}</Link>
         </p>
       </div>
     </div>

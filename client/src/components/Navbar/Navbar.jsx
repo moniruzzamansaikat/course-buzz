@@ -52,7 +52,7 @@ function Navbar() {
             </li>
             <li>
               <Link to={user ? '/add-video' : '/sign-up'}>
-                {user ? 'Add Video' : t('navlinks.signup')}
+                {user ? t('navlinks.addvideo') : t('navlinks.signup')}
               </Link>
             </li>
             <li>
@@ -64,7 +64,7 @@ function Navbar() {
                 }`}
                 to={user ? '/profile' : '/sign-in'}
               >
-                {user ? 'Profile' : t('navlinks.signin')}
+                {user ? t('navlinks.profile') : t('navlinks.signin')}
               </Link>
             </li>
             <li className="picker">

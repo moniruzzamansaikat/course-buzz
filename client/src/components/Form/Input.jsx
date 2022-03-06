@@ -5,7 +5,7 @@ function Input({ label, error, ...rest }) {
   return (
     <div className="input">
       <label htmlFor={label}>{label}</label>
-      <input id={label} placeholder={`Enter your ${label}`} {...rest} />
+      <input id={label} {...rest} />
       {error && <p className="error">{error}</p>}
     </div>
   );

@@ -17,11 +17,12 @@ function LanguagePicker() {
     },
   ];
 
-  useEffect(() => {
-    i18n.changeLanguage(lang);
-  }, [lang, i18n]);
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang.value);
+    setLang(lang.value);
+  };
 
-  return <Select options={options} onChange={({ value }) => setLang(value)} />;
+  return <Select options={options} onChange={changeLanguage} />;
 }
 
 export default LanguagePicker;
