@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import { fetchQuestionById } from '../adapter/discussAdapter';
 import AddReply from '../components/Replies/AddReply';
@@ -23,6 +24,9 @@ function Replies() {
 
   return (
     <div className="replies-page">
+      <Helmet>
+        <title>{question?.text}</title>
+      </Helmet>
       {question && <h1>{question.text} ?</h1>}
       {question && (
         <p>

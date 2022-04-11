@@ -1,17 +1,48 @@
 const Discussion = require('../model/Discussion');
 
 // get all discussions
-exports.getAllDiscussions = async () => {
+exports.getAllDiscussions = async (page = 1) => {
   try {
-    const discussions = await Discussion.find({}).populate('user').populate({
-      path: 'replies',
-      select: 'text user.name',
-    });
+    const options = {
+      page,
+      limit: 10,
+      populate: {
+        path: 'user',
+        select: 'name',
+      },
+      sort: {
+        createdAt: -1,
+      }
+    }
+
+    const discussions = await Discussion.paginate({}, options);
     return discussions;
   } catch (error) {
     throw error;
   }
 };
+
+// get discussions by category
+exports.getDiscussionsByCategory = async (category, page = 1) => {
+  try {
+    const options = {
+      page,
+      limit: 10,
+      populate: {
+        path: 'user',
+        select: 'name',
+      },
+      sort: {
+        createdAt: -1,
+      }
+    }
+    const discussions = await Discussion.paginate({}, options);
+
+    return discussions;
+  } catch (error) {
+    throw error;
+  };
+}
 
 // get discussion by id
 exports.getDiscussionById = async (discussionId) => {
@@ -26,22 +57,6 @@ exports.getDiscussionById = async (discussionId) => {
         select: 'name',
       });
     return discussion;
-  } catch (error) {
-    throw error;
-  }
-};
-
-// get discussions by category
-exports.getDiscussionsByCategory = async (category) => {
-  try {
-    const discussions = await Discussion.find({ category })
-      .populate('user')
-      .populate({
-        path: 'replies',
-        select: 'text user.name',
-      });
-
-    return discussions;
   } catch (error) {
     throw error;
   }

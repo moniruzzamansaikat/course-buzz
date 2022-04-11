@@ -26,6 +26,7 @@
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "mongoose": "^6.1.8",
+    "mongoose-paginate-v2": "^1.6.3",
     "react-i18next": "^11.15.5",
     "react-select": "^5.2.2"
   },

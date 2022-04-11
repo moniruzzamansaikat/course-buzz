@@ -25,8 +25,8 @@ export const askNewQuestion = (token, { text, category }) => {
     });
 };
 
-export const fetchQuestionsByCategory = (token, category) => {
-  return api(`/discuss?category=${category}`, {
+export const fetchQuestionsByCategory = (token, category, page) => {
+  return api(`/discuss?category=${category}&page=${page}`, {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`,

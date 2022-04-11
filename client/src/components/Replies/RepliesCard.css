@@ -12,3 +12,13 @@
 .replies-card p.user-name {
   font-size: 12px;
 }
+
+.replies-card .reply {
+  margin-bottom: 4px;
+  line-height: 1.6;
+}
+
+.replies-card .time {
+  font-size: 12px;
+  margin-top: -10px;
+}

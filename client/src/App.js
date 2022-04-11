@@ -15,13 +15,13 @@ import Profile from './pages/Profile';
 import Footer from './components/Footer/Footer';
 import VideoDetails from './pages/VideoDetails';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
-import './App.css';
 import { useEffect } from 'react';
 import Community from './pages/Community';
 import Main from './components/Community/Main';
 import Ask from './components/Community/Ask';
 import Replies from './pages/Replies';
+import 'aos/dist/aos.css';
+import './App.css';
 
 import './utils/translations';
 

@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const pagination = require('mongoose-paginate-v2')
 
 const DiscussionSchema = new Schema(
   {
@@ -15,6 +16,10 @@ const DiscussionSchema = new Schema(
           type: Schema.Types.ObjectId,
           ref: 'User',
         },
+        ceratedAt: {
+          type: Date,
+          default: Date.now,
+        }
       },
     ],
   },
@@ -22,6 +27,8 @@ const DiscussionSchema = new Schema(
     timestamps: true,
   }
 );
+
+DiscussionSchema.plugin(pagination);
 
 const Discussion = model('Discussion', DiscussionSchema);
 module.exports = Discussion;

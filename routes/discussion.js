@@ -12,15 +12,17 @@ const router = require('express').Router();
 
 // get all discussions
 router.get('/', async (req, res) => {
-  console.log('get all discussions');
   try {
-    const { category } = req.query;
+    let { category, page } = req.query;
     let discussions = [];
 
+    // parse page to integer
+    page = parseInt(page);
+
     if (category === 'all' || category === undefined) {
-      discussions = await getAllDiscussions();
+      discussions = await getAllDiscussions(page);
     } else {
-      discussions = await getDiscussionsByCategory(category);
+      discussions = await getDiscussionsByCategory(category, page);
     }
 
     res.status(200).send(discussions);

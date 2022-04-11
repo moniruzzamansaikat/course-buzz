@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 export const CourseContext = createContext();
 
 // convert pathname to title
-function getTitle(pathname) {
+export function getTitle(pathname) {
   const path = pathname.split('/');
   let title = path[path.length - 1];
   return title.charAt(0).toUpperCase() + title.slice(1);

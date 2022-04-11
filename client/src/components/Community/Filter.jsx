@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 function Filter({ options }) {
-  const [searchParam, setSearchParam] = useSearchParams();
+  const [, setSearchParam] = useSearchParams();
   const [filterKey, setFilterKey] = useState('all');
   const navigate = useNavigate();
 
@@ -13,6 +13,7 @@ function Filter({ options }) {
 
   const handleClick = () => {
     if (!filterKey.length > 0) return alert('Please enter a search term');
+    if (filterKey === 'all') return alert('Please select a category');
     navigate(`/community/ask?key=${filterKey}`);
   };
 
